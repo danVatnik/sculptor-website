@@ -1,0 +1,192 @@
+.works {
+  padding: var(--section-py) 0;
+  background: var(--bg);
+}
+
+/* ID badge — only rendered when ?ids is in the URL */
+.work-id-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  user-select: none;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  padding: 0.45rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.filter-btn:hover {
+  border-color: var(--text-2);
+  color: var(--text);
+}
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0d0d0d;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Featured card spans 2 columns */
+.work-card.featured {
+  grid-column: span 2;
+}
+
+/* Featured-right card spans 2 columns aligned to the right */
+.work-card.featured-right {
+  grid-column: 2 / span 2;
+}
+
+@media (max-width: 900px) {
+  .works-grid { grid-template-columns: repeat(2, 1fr); }
+  .work-card.featured { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .works-grid { grid-template-columns: 1fr; }
+  .work-card.featured { grid-column: span 1; }
+}
+
+/* Individual card */
+.work-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.work-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--surface-2);
+}
+
+.work-image {
+  position: relative;
+  line-height: 0;
+}
+
+/* Images display at their natural aspect ratio, no cropping */
+.work-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.work-card:hover .work-image img {
+  transform: scale(1.04);
+}
+
+/* Keep featured card row height in line with the other rows.
+   The image is portrait but spans 2 cols, so cap its height and
+   center it — the full image remains visible, no cropping. */
+.work-card.featured .work-image img {
+  max-height: 580px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 245, 240, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.work-card:hover .work-overlay {
+  opacity: 1;
+}
+
+.work-view-btn {
+  background: none;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background var(--transition), color var(--transition);
+}
+.work-view-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.work-info {
+  padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.work-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.work-category {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.work-year {
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.work-material {
+  font-size: 0.8rem;
+  color: var(--text-2);
+  font-style: italic;
+}
+
+.work-dimensions {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  margin-top: 0.15rem;
+}

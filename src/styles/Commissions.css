@@ -1,0 +1,181 @@
+/* ============================================
+   Commissions Section
+   ============================================ */
+
+.commissions {
+  padding: var(--section-py) 0;
+  background: var(--bg-2);
+}
+
+.commissions-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Individual commission card ---- */
+
+.commission-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5rem;
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.commission-card:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.commission-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* ---- Visuals panel ---- */
+
+.commission-visuals {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Optional per-commission image scale */
+.commission-visuals[style*='--image-scale'] {
+  flex: 0 0 calc(55% * var(--image-scale));
+}
+
+.commission-side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.commission-primary-image {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.commission-primary-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.commission-primary-image:hover img {
+  transform: scale(1.02);
+}
+
+.commission-secondary-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.commission-thumb {
+  display: block;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  transition: border-color var(--transition), opacity var(--transition);
+}
+
+.commission-thumb:hover {
+  border-color: var(--text-3);
+  opacity: 0.9;
+}
+
+.commission-thumb.active {
+  border-color: var(--accent);
+}
+
+.commission-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.commission-thumb:hover img {
+  transform: scale(1.04);
+}
+
+/* ---- Content panel ---- */
+
+.commission-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0;
+  gap: 0.4rem;
+}
+
+.commission-number {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.commission-client {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.commission-location {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+}
+
+.commission-year {
+  font-size: 0.875rem;
+  color: var(--text-3);
+}
+
+.commission-description {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  max-width: 50ch;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 900px) {
+  .commission-card,
+  .commission-card:nth-child(even) {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+
+  .commission-visuals {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .commission-secondary-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
