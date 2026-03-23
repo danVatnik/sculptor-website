@@ -101,4 +101,7 @@
   .cinema-grid {
     grid-template-columns: 1fr;
   }
+  .cinema-item.triple img {
+    height: 280px;
+  }
 }

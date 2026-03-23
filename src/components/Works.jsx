@@ -52,6 +52,9 @@ export default function Works() {
         <div className="works-grid">
           {filtered.map((work) => (
             <article key={work.id} className={`work-card ${work.featured ? 'featured' : ''} ${work.featuredRight ? 'featured-right' : ''}`}>
+              {showIds && (
+                <span className="work-id-badge">{work.id}</span>
+              )}
               <div className="work-image" style={work.clipBottom ? { aspectRatio: '3/4', overflow: 'hidden' } : undefined}>
                 <img
                   src={work.image}
@@ -62,9 +65,6 @@ export default function Works() {
                     ...(work.imageZoom ? { transform: `scale(${work.imageZoom})`, transformOrigin: 'center center' } : {}),
                   }}
                 />
-                {showIds && (
-                  <span className="work-id-badge">{work.id}</span>
-                )}
                 <div className="work-overlay">
                   <button className="work-view-btn">View Details</button>
                 </div>

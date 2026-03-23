@@ -2,10 +2,11 @@ import { useState } from 'react';
 import '../styles/Header.css';
 
 const navLinks = [
-  { label: 'Works', href: '#works' },
-  { label: 'About', href: '#about' },
-  { label: 'Process', href: '#process' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Works',       href: '#works' },
+  { label: 'Commissions', href: '#commissions' },
+  { label: 'Cinema',      href: '#cinema' },
+  { label: 'About',       href: '#about' },
+  { label: 'Contact',     href: '#contact' },
 ];
 
 export default function Header() {

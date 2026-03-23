@@ -40,41 +40,15 @@ export default function Contact() {
           <p className="section-label">Get in Touch</p>
           <h2 className="section-title">Commissions &amp; Inquiries</h2>
           <p className="contact-intro">
-            Eleanor welcomes commissions for private collectors, public spaces, and institutional
+            Leonid welcomes commissions for private collectors, public spaces, and institutional
             projects. Each commission begins with a personal consultation.
           </p>
 
           <div className="contact-details">
             <div className="contact-detail">
               <span className="detail-label">Studio</span>
-              <span className="detail-value">Via delle Terme, Florence, Italy</span>
+              <span className="detail-value">Montreal, Canada</span>
             </div>
-            <div className="contact-detail">
-              <span className="detail-label">Representation</span>
-              <span className="detail-value">Galerie Nordwest, Berlin</span>
-            </div>
-            <div className="contact-detail">
-              <span className="detail-label">Press</span>
-              <span className="detail-value">press@vossstudio.com</span>
-            </div>
-          </div>
-
-          <div className="contact-social">
-            <a href="#" className="social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="20" height="20">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="4.5" />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
-            <a href="#" className="social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="20" height="20">
-                <rect x="2" y="2" width="20" height="20" rx="3" />
-                <line x1="8" y1="10" x2="8" y2="17" />
-                <line x1="8" y1="7" x2="8" y2="7.5" strokeWidth="2.5" />
-                <path d="M12 10v7m0-5c0-1.5 4-2 4 1v4" />
-              </svg>
-            </a>
           </div>
         </div>
 
@@ -86,7 +60,7 @@ export default function Contact() {
                 <path d="M14 24l7 7 13-14" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <h3>Message received</h3>
-              <p>Thank you. Eleanor or her studio will be in contact within 3–5 business days.</p>
+              <p>Thank you. Leonid or his studio will be in contact within 3–5 business days.</p>
             </div>
           ) : (
             <form className="contact-form" onSubmit={handleSubmit} noValidate>

@@ -30,6 +30,12 @@
   --section-py:  7rem;
 }
 
+@media (max-width: 600px) {
+  :root {
+    --section-py: 4.5rem;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
